@@ -76,7 +76,7 @@ sub execute {
         target => $target,
       )->parse(
         # XXX Handle missing file/no contents.
-        scalar $sqitch->capture( $git, 'show', "$branch:" . $target->plan_file)
+        scalar $sqitch->capture( $git, 'show', "$branch:./" . $target->plan_file)
     );
 
     # Find the last change the plans have in common.
